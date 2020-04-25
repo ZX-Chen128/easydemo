@@ -23,21 +23,29 @@ public class UserController {
     @RequestMapping(value = "/creatUser", method = RequestMethod.POST)
     public CommonResult<Integer> creatUser(User user) {
         int creatUser = userService.creatUser(user);
-        return CommonResult.success(creatUser);
+        if(creatUser==0){
+            return CommonResult.failed();
+        } else {
+            return CommonResult.success(creatUser);
+        }
     }
 
     @ApiOperation("删除用户")
     @RequestMapping(value = "/deleteUser", method = RequestMethod.POST)
     public CommonResult<Integer> deleteUser(Long id) {
-        int creatUser = userService.deletcUser(id);
-        return CommonResult.success(creatUser);
+        int deleteUser = userService.deletcUser(id);
+        if(deleteUser==0){
+            return CommonResult.failed();
+        } else {
+            return CommonResult.success(deleteUser);
+        }
     }
 
     @ApiOperation("修改用户")
     @RequestMapping(value = "/changeUser", method = RequestMethod.POST)
     public CommonResult<Integer> changeUser(User user) {
-        int creatUser = userService.changeUser(user);
-        return CommonResult.success(creatUser);
+        int changeUser = userService.changeUser(user);
+        return CommonResult.success(changeUser);
     }
 
     @ApiOperation("查找用户")
