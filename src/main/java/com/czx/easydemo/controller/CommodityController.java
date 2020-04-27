@@ -6,7 +6,6 @@ import com.czx.easydemo.model.Commodity;
 import com.czx.easydemo.service.CommodityService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
-import io.swagger.models.auth.In;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -47,7 +46,11 @@ public class CommodityController {
     @RequestMapping(value = "/changeCommodity", method = RequestMethod.POST)
     public CommonResult<Integer> changeCommodity(Commodity commodity){
         int changeCommodity = commodityService.changeCommodity(commodity);
-        return CommonResult.success(changeCommodity);
+        if(changeCommodity==0){
+            return CommonResult.failed();
+        } else{
+            return CommonResult.success(changeCommodity);
+        }
     }
 
 

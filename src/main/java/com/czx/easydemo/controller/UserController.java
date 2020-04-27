@@ -45,7 +45,11 @@ public class UserController {
     @RequestMapping(value = "/changeUser", method = RequestMethod.POST)
     public CommonResult<Integer> changeUser(User user) {
         int changeUser = userService.changeUser(user);
-        return CommonResult.success(changeUser);
+        if(changeUser==0){
+            return CommonResult.failed();
+        } else {
+            return CommonResult.success(changeUser);
+        }
     }
 
     @ApiOperation("查找用户")
