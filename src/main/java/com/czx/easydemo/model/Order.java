@@ -3,7 +3,7 @@ package com.czx.easydemo.model;
 import java.io.Serializable;
 
 public class Order implements Serializable {
-    private Integer orderid;
+    private Long orderid;
 
     private Integer buyer;
 
@@ -13,11 +13,11 @@ public class Order implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
-    public Integer getOrderid() {
+    public Long getOrderid() {
         return orderid;
     }
 
-    public void setOrderid(Integer orderid) {
+    public void setOrderid(Long orderid) {
         this.orderid = orderid;
     }
 

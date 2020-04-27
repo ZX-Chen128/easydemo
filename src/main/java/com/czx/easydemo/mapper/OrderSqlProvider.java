@@ -29,7 +29,7 @@ public class OrderSqlProvider {
         sql.INSERT_INTO("order");
         
         if (record.getOrderid() != null) {
-            sql.VALUES("orderid", "#{orderid,jdbcType=INTEGER}");
+            sql.VALUES("orderid", "#{orderid,jdbcType=BIGINT}");
         }
         
         if (record.getBuyer() != null) {
@@ -75,7 +75,7 @@ public class OrderSqlProvider {
         sql.UPDATE("order");
         
         if (record.getOrderid() != null) {
-            sql.SET("orderid = #{record.orderid,jdbcType=INTEGER}");
+            sql.SET("orderid = #{record.orderid,jdbcType=BIGINT}");
         }
         
         if (record.getBuyer() != null) {
@@ -98,7 +98,7 @@ public class OrderSqlProvider {
         SQL sql = new SQL();
         sql.UPDATE("order");
         
-        sql.SET("orderid = #{record.orderid,jdbcType=INTEGER}");
+        sql.SET("orderid = #{record.orderid,jdbcType=BIGINT}");
         sql.SET("buyer = #{record.buyer,jdbcType=INTEGER}");
         sql.SET("commodity = #{record.commodity,jdbcType=INTEGER}");
         sql.SET("number = #{record.number,jdbcType=INTEGER}");
@@ -124,7 +124,7 @@ public class OrderSqlProvider {
             sql.SET("number = #{number,jdbcType=INTEGER}");
         }
         
-        sql.WHERE("orderid = #{orderid,jdbcType=INTEGER}");
+        sql.WHERE("orderid = #{orderid,jdbcType=BIGINT}");
         
         return sql.toString();
     }

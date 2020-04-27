@@ -25,14 +25,14 @@ public interface CommodityMapper {
 
     @Delete({
         "delete from commodity",
-        "where commodityid = #{commodityid,jdbcType=INTEGER}"
+        "where commodityid = #{commodityid,jdbcType=BIGINT}"
     })
-    int deleteByPrimaryKey(Integer commodityid);
+    int deleteByPrimaryKey(Long commodityid);
 
     @Insert({
         "insert into commodity (commodityid, name, ",
         "stock)",
-        "values (#{commodityid,jdbcType=INTEGER}, #{name,jdbcType=CHAR}, ",
+        "values (#{commodityid,jdbcType=BIGINT}, #{name,jdbcType=CHAR}, ",
         "#{stock,jdbcType=INTEGER})"
     })
     int insert(Commodity record);
@@ -42,7 +42,7 @@ public interface CommodityMapper {
 
     @SelectProvider(type=CommoditySqlProvider.class, method="selectByExample")
     @Results({
-        @Result(column="commodityid", property="commodityid", jdbcType=JdbcType.INTEGER, id=true),
+        @Result(column="commodityid", property="commodityid", jdbcType=JdbcType.BIGINT, id=true),
         @Result(column="name", property="name", jdbcType=JdbcType.CHAR),
         @Result(column="stock", property="stock", jdbcType=JdbcType.INTEGER)
     })
@@ -52,14 +52,14 @@ public interface CommodityMapper {
         "select",
         "commodityid, name, stock",
         "from commodity",
-        "where commodityid = #{commodityid,jdbcType=INTEGER}"
+        "where commodityid = #{commodityid,jdbcType=BIGINT}"
     })
     @Results({
-        @Result(column="commodityid", property="commodityid", jdbcType=JdbcType.INTEGER, id=true),
+        @Result(column="commodityid", property="commodityid", jdbcType=JdbcType.BIGINT, id=true),
         @Result(column="name", property="name", jdbcType=JdbcType.CHAR),
         @Result(column="stock", property="stock", jdbcType=JdbcType.INTEGER)
     })
-    Commodity selectByPrimaryKey(Integer commodityid);
+    Commodity selectByPrimaryKey(Long commodityid);
 
     @UpdateProvider(type=CommoditySqlProvider.class, method="updateByExampleSelective")
     int updateByExampleSelective(@Param("record") Commodity record, @Param("example") CommodityExample example);
@@ -74,7 +74,7 @@ public interface CommodityMapper {
         "update commodity",
         "set name = #{name,jdbcType=CHAR},",
           "stock = #{stock,jdbcType=INTEGER}",
-        "where commodityid = #{commodityid,jdbcType=INTEGER}"
+        "where commodityid = #{commodityid,jdbcType=BIGINT}"
     })
     int updateByPrimaryKey(Commodity record);
 }

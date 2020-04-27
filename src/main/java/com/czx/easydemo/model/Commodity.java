@@ -3,7 +3,7 @@ package com.czx.easydemo.model;
 import java.io.Serializable;
 
 public class Commodity implements Serializable {
-    private Integer commodityid;
+    private Long commodityid;
 
     private String name;
 
@@ -11,11 +11,11 @@ public class Commodity implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
-    public Integer getCommodityid() {
+    public Long getCommodityid() {
         return commodityid;
     }
 
-    public void setCommodityid(Integer commodityid) {
+    public void setCommodityid(Long commodityid) {
         this.commodityid = commodityid;
     }
 

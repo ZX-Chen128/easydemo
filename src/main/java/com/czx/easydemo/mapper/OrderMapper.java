@@ -25,14 +25,14 @@ public interface OrderMapper {
 
     @Delete({
         "delete from order",
-        "where orderid = #{orderid,jdbcType=INTEGER}"
+        "where orderid = #{orderid,jdbcType=BIGINT}"
     })
-    int deleteByPrimaryKey(Integer orderid);
+    int deleteByPrimaryKey(Long orderid);
 
     @Insert({
         "insert into order (orderid, buyer, ",
         "commodity, number)",
-        "values (#{orderid,jdbcType=INTEGER}, #{buyer,jdbcType=INTEGER}, ",
+        "values (#{orderid,jdbcType=BIGINT}, #{buyer,jdbcType=INTEGER}, ",
         "#{commodity,jdbcType=INTEGER}, #{number,jdbcType=INTEGER})"
     })
     int insert(Order record);
@@ -42,7 +42,7 @@ public interface OrderMapper {
 
     @SelectProvider(type=OrderSqlProvider.class, method="selectByExample")
     @Results({
-        @Result(column="orderid", property="orderid", jdbcType=JdbcType.INTEGER, id=true),
+        @Result(column="orderid", property="orderid", jdbcType=JdbcType.BIGINT, id=true),
         @Result(column="buyer", property="buyer", jdbcType=JdbcType.INTEGER),
         @Result(column="commodity", property="commodity", jdbcType=JdbcType.INTEGER),
         @Result(column="number", property="number", jdbcType=JdbcType.INTEGER)
@@ -53,15 +53,15 @@ public interface OrderMapper {
         "select",
         "orderid, buyer, commodity, number",
         "from order",
-        "where orderid = #{orderid,jdbcType=INTEGER}"
+        "where orderid = #{orderid,jdbcType=BIGINT}"
     })
     @Results({
-        @Result(column="orderid", property="orderid", jdbcType=JdbcType.INTEGER, id=true),
+        @Result(column="orderid", property="orderid", jdbcType=JdbcType.BIGINT, id=true),
         @Result(column="buyer", property="buyer", jdbcType=JdbcType.INTEGER),
         @Result(column="commodity", property="commodity", jdbcType=JdbcType.INTEGER),
         @Result(column="number", property="number", jdbcType=JdbcType.INTEGER)
     })
-    Order selectByPrimaryKey(Integer orderid);
+    Order selectByPrimaryKey(Long orderid);
 
     @UpdateProvider(type=OrderSqlProvider.class, method="updateByExampleSelective")
     int updateByExampleSelective(@Param("record") Order record, @Param("example") OrderExample example);
@@ -77,7 +77,7 @@ public interface OrderMapper {
         "set buyer = #{buyer,jdbcType=INTEGER},",
           "commodity = #{commodity,jdbcType=INTEGER},",
           "number = #{number,jdbcType=INTEGER}",
-        "where orderid = #{orderid,jdbcType=INTEGER}"
+        "where orderid = #{orderid,jdbcType=BIGINT}"
     })
     int updateByPrimaryKey(Order record);
 }

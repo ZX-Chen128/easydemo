@@ -8,7 +8,7 @@ public interface UserService {
     @Transactional
     int creatUser(User user);
 
-    int deletcUser(Long user);
+    int deletcUser(Long id);
 
     int changeUser(User user);
 

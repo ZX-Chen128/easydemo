@@ -29,7 +29,7 @@ public class CommoditySqlProvider {
         sql.INSERT_INTO("commodity");
         
         if (record.getCommodityid() != null) {
-            sql.VALUES("commodityid", "#{commodityid,jdbcType=INTEGER}");
+            sql.VALUES("commodityid", "#{commodityid,jdbcType=BIGINT}");
         }
         
         if (record.getName() != null) {
@@ -70,7 +70,7 @@ public class CommoditySqlProvider {
         sql.UPDATE("commodity");
         
         if (record.getCommodityid() != null) {
-            sql.SET("commodityid = #{record.commodityid,jdbcType=INTEGER}");
+            sql.SET("commodityid = #{record.commodityid,jdbcType=BIGINT}");
         }
         
         if (record.getName() != null) {
@@ -89,7 +89,7 @@ public class CommoditySqlProvider {
         SQL sql = new SQL();
         sql.UPDATE("commodity");
         
-        sql.SET("commodityid = #{record.commodityid,jdbcType=INTEGER}");
+        sql.SET("commodityid = #{record.commodityid,jdbcType=BIGINT}");
         sql.SET("name = #{record.name,jdbcType=CHAR}");
         sql.SET("stock = #{record.stock,jdbcType=INTEGER}");
         
@@ -110,7 +110,7 @@ public class CommoditySqlProvider {
             sql.SET("stock = #{stock,jdbcType=INTEGER}");
         }
         
-        sql.WHERE("commodityid = #{commodityid,jdbcType=INTEGER}");
+        sql.WHERE("commodityid = #{commodityid,jdbcType=BIGINT}");
         
         return sql.toString();
     }
