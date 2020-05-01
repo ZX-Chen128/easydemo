@@ -9,6 +9,8 @@ public class Commodity implements Serializable {
 
     private Integer stock;
 
+    private Integer price;
+
     private static final long serialVersionUID = 1L;
 
     public Long getCommodityid() {
@@ -35,6 +37,14 @@ public class Commodity implements Serializable {
         this.stock = stock;
     }
 
+    public Integer getPrice() {
+        return price;
+    }
+
+    public void setPrice(Integer price) {
+        this.price = price;
+    }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -44,6 +54,7 @@ public class Commodity implements Serializable {
         sb.append(", commodityid=").append(commodityid);
         sb.append(", name=").append(name);
         sb.append(", stock=").append(stock);
+        sb.append(", price=").append(price);
         sb.append(", serialVersionUID=").append(serialVersionUID);
         sb.append("]");
         return sb.toString();

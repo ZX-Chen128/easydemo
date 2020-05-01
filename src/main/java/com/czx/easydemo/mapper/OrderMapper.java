@@ -24,16 +24,18 @@ public interface OrderMapper {
     int deleteByExample(OrderExample example);
 
     @Delete({
-        "delete from order",
+        "delete from `order`",
         "where orderid = #{orderid,jdbcType=BIGINT}"
     })
     int deleteByPrimaryKey(Long orderid);
 
     @Insert({
-        "insert into order (orderid, buyer, ",
-        "commodity, number)",
-        "values (#{orderid,jdbcType=BIGINT}, #{buyer,jdbcType=INTEGER}, ",
-        "#{commodity,jdbcType=INTEGER}, #{number,jdbcType=INTEGER})"
+        "insert into `order` (orderid, buyer, ",
+        "buyerid, commodity, ",
+        "commodityid, number)",
+        "values (#{orderid,jdbcType=BIGINT}, #{buyer,jdbcType=CHAR}, ",
+        "#{buyerid,jdbcType=BIGINT}, #{commodity,jdbcType=CHAR}, ",
+        "#{commodityid,jdbcType=BIGINT}, #{number,jdbcType=INTEGER})"
     })
     int insert(Order record);
 
@@ -43,22 +45,26 @@ public interface OrderMapper {
     @SelectProvider(type=OrderSqlProvider.class, method="selectByExample")
     @Results({
         @Result(column="orderid", property="orderid", jdbcType=JdbcType.BIGINT, id=true),
-        @Result(column="buyer", property="buyer", jdbcType=JdbcType.INTEGER),
-        @Result(column="commodity", property="commodity", jdbcType=JdbcType.INTEGER),
+        @Result(column="buyer", property="buyer", jdbcType=JdbcType.CHAR),
+        @Result(column="buyerid", property="buyerid", jdbcType=JdbcType.BIGINT),
+        @Result(column="commodity", property="commodity", jdbcType=JdbcType.CHAR),
+        @Result(column="commodityid", property="commodityid", jdbcType=JdbcType.BIGINT),
         @Result(column="number", property="number", jdbcType=JdbcType.INTEGER)
     })
     List<Order> selectByExample(OrderExample example);
 
     @Select({
         "select",
-        "orderid, buyer, commodity, number",
-        "from order",
+        "orderid, buyer, buyerid, commodity, commodityid, number",
+        "from `order`",
         "where orderid = #{orderid,jdbcType=BIGINT}"
     })
     @Results({
         @Result(column="orderid", property="orderid", jdbcType=JdbcType.BIGINT, id=true),
-        @Result(column="buyer", property="buyer", jdbcType=JdbcType.INTEGER),
-        @Result(column="commodity", property="commodity", jdbcType=JdbcType.INTEGER),
+        @Result(column="buyer", property="buyer", jdbcType=JdbcType.CHAR),
+        @Result(column="buyerid", property="buyerid", jdbcType=JdbcType.BIGINT),
+        @Result(column="commodity", property="commodity", jdbcType=JdbcType.CHAR),
+        @Result(column="commodityid", property="commodityid", jdbcType=JdbcType.BIGINT),
         @Result(column="number", property="number", jdbcType=JdbcType.INTEGER)
     })
     Order selectByPrimaryKey(Long orderid);
@@ -73,9 +79,11 @@ public interface OrderMapper {
     int updateByPrimaryKeySelective(Order record);
 
     @Update({
-        "update order",
-        "set buyer = #{buyer,jdbcType=INTEGER},",
-          "commodity = #{commodity,jdbcType=INTEGER},",
+        "update `order`",
+        "set buyer = #{buyer,jdbcType=CHAR},",
+          "buyerid = #{buyerid,jdbcType=BIGINT},",
+          "commodity = #{commodity,jdbcType=CHAR},",
+          "commodityid = #{commodityid,jdbcType=BIGINT},",
           "number = #{number,jdbcType=INTEGER}",
         "where orderid = #{orderid,jdbcType=BIGINT}"
     })

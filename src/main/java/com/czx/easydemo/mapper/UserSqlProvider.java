@@ -40,6 +40,10 @@ public class UserSqlProvider {
             sql.VALUES("password", "#{password,jdbcType=INTEGER}");
         }
         
+        if (record.getDeposit() != null) {
+            sql.VALUES("deposit", "#{deposit,jdbcType=INTEGER}");
+        }
+        
         return sql.toString();
     }
 
@@ -52,6 +56,7 @@ public class UserSqlProvider {
         }
         sql.SELECT("username");
         sql.SELECT("password");
+        sql.SELECT("deposit");
         sql.FROM("user");
         applyWhere(sql, example, false);
         
@@ -81,6 +86,10 @@ public class UserSqlProvider {
             sql.SET("password = #{record.password,jdbcType=INTEGER}");
         }
         
+        if (record.getDeposit() != null) {
+            sql.SET("deposit = #{record.deposit,jdbcType=INTEGER}");
+        }
+        
         applyWhere(sql, example, true);
         return sql.toString();
     }
@@ -92,6 +101,7 @@ public class UserSqlProvider {
         sql.SET("userid = #{record.userid,jdbcType=BIGINT}");
         sql.SET("username = #{record.username,jdbcType=CHAR}");
         sql.SET("password = #{record.password,jdbcType=INTEGER}");
+        sql.SET("deposit = #{record.deposit,jdbcType=INTEGER}");
         
         UserExample example = (UserExample) parameter.get("example");
         applyWhere(sql, example, true);
@@ -108,6 +118,10 @@ public class UserSqlProvider {
         
         if (record.getPassword() != null) {
             sql.SET("password = #{password,jdbcType=INTEGER}");
+        }
+        
+        if (record.getDeposit() != null) {
+            sql.SET("deposit = #{deposit,jdbcType=INTEGER}");
         }
         
         sql.WHERE("userid = #{userid,jdbcType=BIGINT}");

@@ -174,53 +174,123 @@ public class OrderExample {
             return (Criteria) this;
         }
 
-        public Criteria andBuyerEqualTo(Integer value) {
+        public Criteria andBuyerEqualTo(String value) {
             addCriterion("buyer =", value, "buyer");
             return (Criteria) this;
         }
 
-        public Criteria andBuyerNotEqualTo(Integer value) {
+        public Criteria andBuyerNotEqualTo(String value) {
             addCriterion("buyer <>", value, "buyer");
             return (Criteria) this;
         }
 
-        public Criteria andBuyerGreaterThan(Integer value) {
+        public Criteria andBuyerGreaterThan(String value) {
             addCriterion("buyer >", value, "buyer");
             return (Criteria) this;
         }
 
-        public Criteria andBuyerGreaterThanOrEqualTo(Integer value) {
+        public Criteria andBuyerGreaterThanOrEqualTo(String value) {
             addCriterion("buyer >=", value, "buyer");
             return (Criteria) this;
         }
 
-        public Criteria andBuyerLessThan(Integer value) {
+        public Criteria andBuyerLessThan(String value) {
             addCriterion("buyer <", value, "buyer");
             return (Criteria) this;
         }
 
-        public Criteria andBuyerLessThanOrEqualTo(Integer value) {
+        public Criteria andBuyerLessThanOrEqualTo(String value) {
             addCriterion("buyer <=", value, "buyer");
             return (Criteria) this;
         }
 
-        public Criteria andBuyerIn(List<Integer> values) {
+        public Criteria andBuyerLike(String value) {
+            addCriterion("buyer like", value, "buyer");
+            return (Criteria) this;
+        }
+
+        public Criteria andBuyerNotLike(String value) {
+            addCriterion("buyer not like", value, "buyer");
+            return (Criteria) this;
+        }
+
+        public Criteria andBuyerIn(List<String> values) {
             addCriterion("buyer in", values, "buyer");
             return (Criteria) this;
         }
 
-        public Criteria andBuyerNotIn(List<Integer> values) {
+        public Criteria andBuyerNotIn(List<String> values) {
             addCriterion("buyer not in", values, "buyer");
             return (Criteria) this;
         }
 
-        public Criteria andBuyerBetween(Integer value1, Integer value2) {
+        public Criteria andBuyerBetween(String value1, String value2) {
             addCriterion("buyer between", value1, value2, "buyer");
             return (Criteria) this;
         }
 
-        public Criteria andBuyerNotBetween(Integer value1, Integer value2) {
+        public Criteria andBuyerNotBetween(String value1, String value2) {
             addCriterion("buyer not between", value1, value2, "buyer");
+            return (Criteria) this;
+        }
+
+        public Criteria andBuyeridIsNull() {
+            addCriterion("buyerid is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andBuyeridIsNotNull() {
+            addCriterion("buyerid is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andBuyeridEqualTo(Long value) {
+            addCriterion("buyerid =", value, "buyerid");
+            return (Criteria) this;
+        }
+
+        public Criteria andBuyeridNotEqualTo(Long value) {
+            addCriterion("buyerid <>", value, "buyerid");
+            return (Criteria) this;
+        }
+
+        public Criteria andBuyeridGreaterThan(Long value) {
+            addCriterion("buyerid >", value, "buyerid");
+            return (Criteria) this;
+        }
+
+        public Criteria andBuyeridGreaterThanOrEqualTo(Long value) {
+            addCriterion("buyerid >=", value, "buyerid");
+            return (Criteria) this;
+        }
+
+        public Criteria andBuyeridLessThan(Long value) {
+            addCriterion("buyerid <", value, "buyerid");
+            return (Criteria) this;
+        }
+
+        public Criteria andBuyeridLessThanOrEqualTo(Long value) {
+            addCriterion("buyerid <=", value, "buyerid");
+            return (Criteria) this;
+        }
+
+        public Criteria andBuyeridIn(List<Long> values) {
+            addCriterion("buyerid in", values, "buyerid");
+            return (Criteria) this;
+        }
+
+        public Criteria andBuyeridNotIn(List<Long> values) {
+            addCriterion("buyerid not in", values, "buyerid");
+            return (Criteria) this;
+        }
+
+        public Criteria andBuyeridBetween(Long value1, Long value2) {
+            addCriterion("buyerid between", value1, value2, "buyerid");
+            return (Criteria) this;
+        }
+
+        public Criteria andBuyeridNotBetween(Long value1, Long value2) {
+            addCriterion("buyerid not between", value1, value2, "buyerid");
             return (Criteria) this;
         }
 
@@ -234,53 +304,123 @@ public class OrderExample {
             return (Criteria) this;
         }
 
-        public Criteria andCommodityEqualTo(Integer value) {
+        public Criteria andCommodityEqualTo(String value) {
             addCriterion("commodity =", value, "commodity");
             return (Criteria) this;
         }
 
-        public Criteria andCommodityNotEqualTo(Integer value) {
+        public Criteria andCommodityNotEqualTo(String value) {
             addCriterion("commodity <>", value, "commodity");
             return (Criteria) this;
         }
 
-        public Criteria andCommodityGreaterThan(Integer value) {
+        public Criteria andCommodityGreaterThan(String value) {
             addCriterion("commodity >", value, "commodity");
             return (Criteria) this;
         }
 
-        public Criteria andCommodityGreaterThanOrEqualTo(Integer value) {
+        public Criteria andCommodityGreaterThanOrEqualTo(String value) {
             addCriterion("commodity >=", value, "commodity");
             return (Criteria) this;
         }
 
-        public Criteria andCommodityLessThan(Integer value) {
+        public Criteria andCommodityLessThan(String value) {
             addCriterion("commodity <", value, "commodity");
             return (Criteria) this;
         }
 
-        public Criteria andCommodityLessThanOrEqualTo(Integer value) {
+        public Criteria andCommodityLessThanOrEqualTo(String value) {
             addCriterion("commodity <=", value, "commodity");
             return (Criteria) this;
         }
 
-        public Criteria andCommodityIn(List<Integer> values) {
+        public Criteria andCommodityLike(String value) {
+            addCriterion("commodity like", value, "commodity");
+            return (Criteria) this;
+        }
+
+        public Criteria andCommodityNotLike(String value) {
+            addCriterion("commodity not like", value, "commodity");
+            return (Criteria) this;
+        }
+
+        public Criteria andCommodityIn(List<String> values) {
             addCriterion("commodity in", values, "commodity");
             return (Criteria) this;
         }
 
-        public Criteria andCommodityNotIn(List<Integer> values) {
+        public Criteria andCommodityNotIn(List<String> values) {
             addCriterion("commodity not in", values, "commodity");
             return (Criteria) this;
         }
 
-        public Criteria andCommodityBetween(Integer value1, Integer value2) {
+        public Criteria andCommodityBetween(String value1, String value2) {
             addCriterion("commodity between", value1, value2, "commodity");
             return (Criteria) this;
         }
 
-        public Criteria andCommodityNotBetween(Integer value1, Integer value2) {
+        public Criteria andCommodityNotBetween(String value1, String value2) {
             addCriterion("commodity not between", value1, value2, "commodity");
+            return (Criteria) this;
+        }
+
+        public Criteria andCommodityidIsNull() {
+            addCriterion("commodityid is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andCommodityidIsNotNull() {
+            addCriterion("commodityid is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andCommodityidEqualTo(Long value) {
+            addCriterion("commodityid =", value, "commodityid");
+            return (Criteria) this;
+        }
+
+        public Criteria andCommodityidNotEqualTo(Long value) {
+            addCriterion("commodityid <>", value, "commodityid");
+            return (Criteria) this;
+        }
+
+        public Criteria andCommodityidGreaterThan(Long value) {
+            addCriterion("commodityid >", value, "commodityid");
+            return (Criteria) this;
+        }
+
+        public Criteria andCommodityidGreaterThanOrEqualTo(Long value) {
+            addCriterion("commodityid >=", value, "commodityid");
+            return (Criteria) this;
+        }
+
+        public Criteria andCommodityidLessThan(Long value) {
+            addCriterion("commodityid <", value, "commodityid");
+            return (Criteria) this;
+        }
+
+        public Criteria andCommodityidLessThanOrEqualTo(Long value) {
+            addCriterion("commodityid <=", value, "commodityid");
+            return (Criteria) this;
+        }
+
+        public Criteria andCommodityidIn(List<Long> values) {
+            addCriterion("commodityid in", values, "commodityid");
+            return (Criteria) this;
+        }
+
+        public Criteria andCommodityidNotIn(List<Long> values) {
+            addCriterion("commodityid not in", values, "commodityid");
+            return (Criteria) this;
+        }
+
+        public Criteria andCommodityidBetween(Long value1, Long value2) {
+            addCriterion("commodityid between", value1, value2, "commodityid");
+            return (Criteria) this;
+        }
+
+        public Criteria andCommodityidNotBetween(Long value1, Long value2) {
+            addCriterion("commodityid not between", value1, value2, "commodityid");
             return (Criteria) this;
         }
 

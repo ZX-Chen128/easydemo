@@ -31,9 +31,9 @@ public interface CommodityMapper {
 
     @Insert({
         "insert into commodity (commodityid, name, ",
-        "stock)",
+        "stock, price)",
         "values (#{commodityid,jdbcType=BIGINT}, #{name,jdbcType=CHAR}, ",
-        "#{stock,jdbcType=INTEGER})"
+        "#{stock,jdbcType=INTEGER}, #{price,jdbcType=INTEGER})"
     })
     int insert(Commodity record);
 
@@ -44,20 +44,22 @@ public interface CommodityMapper {
     @Results({
         @Result(column="commodityid", property="commodityid", jdbcType=JdbcType.BIGINT, id=true),
         @Result(column="name", property="name", jdbcType=JdbcType.CHAR),
-        @Result(column="stock", property="stock", jdbcType=JdbcType.INTEGER)
+        @Result(column="stock", property="stock", jdbcType=JdbcType.INTEGER),
+        @Result(column="price", property="price", jdbcType=JdbcType.INTEGER)
     })
     List<Commodity> selectByExample(CommodityExample example);
 
     @Select({
         "select",
-        "commodityid, name, stock",
+        "commodityid, name, stock, price",
         "from commodity",
         "where commodityid = #{commodityid,jdbcType=BIGINT}"
     })
     @Results({
         @Result(column="commodityid", property="commodityid", jdbcType=JdbcType.BIGINT, id=true),
         @Result(column="name", property="name", jdbcType=JdbcType.CHAR),
-        @Result(column="stock", property="stock", jdbcType=JdbcType.INTEGER)
+        @Result(column="stock", property="stock", jdbcType=JdbcType.INTEGER),
+        @Result(column="price", property="price", jdbcType=JdbcType.INTEGER)
     })
     Commodity selectByPrimaryKey(Long commodityid);
 
@@ -73,7 +75,8 @@ public interface CommodityMapper {
     @Update({
         "update commodity",
         "set name = #{name,jdbcType=CHAR},",
-          "stock = #{stock,jdbcType=INTEGER}",
+          "stock = #{stock,jdbcType=INTEGER},",
+          "price = #{price,jdbcType=INTEGER}",
         "where commodityid = #{commodityid,jdbcType=BIGINT}"
     })
     int updateByPrimaryKey(Commodity record);

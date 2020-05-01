@@ -24,6 +24,8 @@ public class User implements Serializable {
      */
     private Integer password;
 
+    private Integer deposit;
+
     private static final long serialVersionUID = 1L;
 
     public Long getUserid() {
@@ -50,6 +52,14 @@ public class User implements Serializable {
         this.password = password;
     }
 
+    public Integer getDeposit() {
+        return deposit;
+    }
+
+    public void setDeposit(Integer deposit) {
+        this.deposit = deposit;
+    }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -59,6 +69,7 @@ public class User implements Serializable {
         sb.append(", userid=").append(userid);
         sb.append(", username=").append(username);
         sb.append(", password=").append(password);
+        sb.append(", deposit=").append(deposit);
         sb.append(", serialVersionUID=").append(serialVersionUID);
         sb.append("]");
         return sb.toString();

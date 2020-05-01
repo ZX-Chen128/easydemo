@@ -5,9 +5,13 @@ import java.io.Serializable;
 public class Order implements Serializable {
     private Long orderid;
 
-    private Integer buyer;
+    private String buyer;
 
-    private Integer commodity;
+    private Long buyerid;
+
+    private String commodity;
+
+    private Long commodityid;
 
     private Integer number;
 
@@ -21,20 +25,36 @@ public class Order implements Serializable {
         this.orderid = orderid;
     }
 
-    public Integer getBuyer() {
+    public String getBuyer() {
         return buyer;
     }
 
-    public void setBuyer(Integer buyer) {
+    public void setBuyer(String buyer) {
         this.buyer = buyer;
     }
 
-    public Integer getCommodity() {
+    public Long getBuyerid() {
+        return buyerid;
+    }
+
+    public void setBuyerid(Long buyerid) {
+        this.buyerid = buyerid;
+    }
+
+    public String getCommodity() {
         return commodity;
     }
 
-    public void setCommodity(Integer commodity) {
+    public void setCommodity(String commodity) {
         this.commodity = commodity;
+    }
+
+    public Long getCommodityid() {
+        return commodityid;
+    }
+
+    public void setCommodityid(Long commodityid) {
+        this.commodityid = commodityid;
     }
 
     public Integer getNumber() {
@@ -53,7 +73,9 @@ public class Order implements Serializable {
         sb.append("Hash = ").append(hashCode());
         sb.append(", orderid=").append(orderid);
         sb.append(", buyer=").append(buyer);
+        sb.append(", buyerid=").append(buyerid);
         sb.append(", commodity=").append(commodity);
+        sb.append(", commodityid=").append(commodityid);
         sb.append(", number=").append(number);
         sb.append(", serialVersionUID=").append(serialVersionUID);
         sb.append("]");

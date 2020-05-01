@@ -293,6 +293,66 @@ public class UserExample {
             addCriterion("password not between", value1, value2, "password");
             return (Criteria) this;
         }
+
+        public Criteria andDepositIsNull() {
+            addCriterion("deposit is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andDepositIsNotNull() {
+            addCriterion("deposit is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andDepositEqualTo(Integer value) {
+            addCriterion("deposit =", value, "deposit");
+            return (Criteria) this;
+        }
+
+        public Criteria andDepositNotEqualTo(Integer value) {
+            addCriterion("deposit <>", value, "deposit");
+            return (Criteria) this;
+        }
+
+        public Criteria andDepositGreaterThan(Integer value) {
+            addCriterion("deposit >", value, "deposit");
+            return (Criteria) this;
+        }
+
+        public Criteria andDepositGreaterThanOrEqualTo(Integer value) {
+            addCriterion("deposit >=", value, "deposit");
+            return (Criteria) this;
+        }
+
+        public Criteria andDepositLessThan(Integer value) {
+            addCriterion("deposit <", value, "deposit");
+            return (Criteria) this;
+        }
+
+        public Criteria andDepositLessThanOrEqualTo(Integer value) {
+            addCriterion("deposit <=", value, "deposit");
+            return (Criteria) this;
+        }
+
+        public Criteria andDepositIn(List<Integer> values) {
+            addCriterion("deposit in", values, "deposit");
+            return (Criteria) this;
+        }
+
+        public Criteria andDepositNotIn(List<Integer> values) {
+            addCriterion("deposit not in", values, "deposit");
+            return (Criteria) this;
+        }
+
+        public Criteria andDepositBetween(Integer value1, Integer value2) {
+            addCriterion("deposit between", value1, value2, "deposit");
+            return (Criteria) this;
+        }
+
+        public Criteria andDepositNotBetween(Integer value1, Integer value2) {
+            addCriterion("deposit not between", value1, value2, "deposit");
+            return (Criteria) this;
+        }
     }
 
     public static class Criteria extends GeneratedCriteria {

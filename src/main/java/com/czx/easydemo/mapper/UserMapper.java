@@ -31,9 +31,9 @@ public interface UserMapper {
 
     @Insert({
         "insert into user (userid, username, ",
-        "password)",
+        "password, deposit)",
         "values (#{userid,jdbcType=BIGINT}, #{username,jdbcType=CHAR}, ",
-        "#{password,jdbcType=INTEGER})"
+        "#{password,jdbcType=INTEGER}, #{deposit,jdbcType=INTEGER})"
     })
     int insert(User record);
 
@@ -44,20 +44,22 @@ public interface UserMapper {
     @Results({
         @Result(column="userid", property="userid", jdbcType=JdbcType.BIGINT, id=true),
         @Result(column="username", property="username", jdbcType=JdbcType.CHAR),
-        @Result(column="password", property="password", jdbcType=JdbcType.INTEGER)
+        @Result(column="password", property="password", jdbcType=JdbcType.INTEGER),
+        @Result(column="deposit", property="deposit", jdbcType=JdbcType.INTEGER)
     })
     List<User> selectByExample(UserExample example);
 
     @Select({
         "select",
-        "userid, username, password",
+        "userid, username, password, deposit",
         "from user",
         "where userid = #{userid,jdbcType=BIGINT}"
     })
     @Results({
         @Result(column="userid", property="userid", jdbcType=JdbcType.BIGINT, id=true),
         @Result(column="username", property="username", jdbcType=JdbcType.CHAR),
-        @Result(column="password", property="password", jdbcType=JdbcType.INTEGER)
+        @Result(column="password", property="password", jdbcType=JdbcType.INTEGER),
+        @Result(column="deposit", property="deposit", jdbcType=JdbcType.INTEGER)
     })
     User selectByPrimaryKey(Long userid);
 
@@ -73,7 +75,8 @@ public interface UserMapper {
     @Update({
         "update user",
         "set username = #{username,jdbcType=CHAR},",
-          "password = #{password,jdbcType=INTEGER}",
+          "password = #{password,jdbcType=INTEGER},",
+          "deposit = #{deposit,jdbcType=INTEGER}",
         "where userid = #{userid,jdbcType=BIGINT}"
     })
     int updateByPrimaryKey(User record);

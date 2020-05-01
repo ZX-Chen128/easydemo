@@ -40,6 +40,10 @@ public class CommoditySqlProvider {
             sql.VALUES("stock", "#{stock,jdbcType=INTEGER}");
         }
         
+        if (record.getPrice() != null) {
+            sql.VALUES("price", "#{price,jdbcType=INTEGER}");
+        }
+        
         return sql.toString();
     }
 
@@ -52,6 +56,7 @@ public class CommoditySqlProvider {
         }
         sql.SELECT("name");
         sql.SELECT("stock");
+        sql.SELECT("price");
         sql.FROM("commodity");
         applyWhere(sql, example, false);
         
@@ -81,6 +86,10 @@ public class CommoditySqlProvider {
             sql.SET("stock = #{record.stock,jdbcType=INTEGER}");
         }
         
+        if (record.getPrice() != null) {
+            sql.SET("price = #{record.price,jdbcType=INTEGER}");
+        }
+        
         applyWhere(sql, example, true);
         return sql.toString();
     }
@@ -92,6 +101,7 @@ public class CommoditySqlProvider {
         sql.SET("commodityid = #{record.commodityid,jdbcType=BIGINT}");
         sql.SET("name = #{record.name,jdbcType=CHAR}");
         sql.SET("stock = #{record.stock,jdbcType=INTEGER}");
+        sql.SET("price = #{record.price,jdbcType=INTEGER}");
         
         CommodityExample example = (CommodityExample) parameter.get("example");
         applyWhere(sql, example, true);
@@ -108,6 +118,10 @@ public class CommoditySqlProvider {
         
         if (record.getStock() != null) {
             sql.SET("stock = #{stock,jdbcType=INTEGER}");
+        }
+        
+        if (record.getPrice() != null) {
+            sql.SET("price = #{price,jdbcType=INTEGER}");
         }
         
         sql.WHERE("commodityid = #{commodityid,jdbcType=BIGINT}");

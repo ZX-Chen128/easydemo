@@ -33,11 +33,19 @@ public class OrderSqlProvider {
         }
         
         if (record.getBuyer() != null) {
-            sql.VALUES("buyer", "#{buyer,jdbcType=INTEGER}");
+            sql.VALUES("buyer", "#{buyer,jdbcType=CHAR}");
+        }
+        
+        if (record.getBuyerid() != null) {
+            sql.VALUES("buyerid", "#{buyerid,jdbcType=BIGINT}");
         }
         
         if (record.getCommodity() != null) {
-            sql.VALUES("commodity", "#{commodity,jdbcType=INTEGER}");
+            sql.VALUES("commodity", "#{commodity,jdbcType=CHAR}");
+        }
+        
+        if (record.getCommodityid() != null) {
+            sql.VALUES("commodityid", "#{commodityid,jdbcType=BIGINT}");
         }
         
         if (record.getNumber() != null) {
@@ -55,7 +63,9 @@ public class OrderSqlProvider {
             sql.SELECT("orderid");
         }
         sql.SELECT("buyer");
+        sql.SELECT("buyerid");
         sql.SELECT("commodity");
+        sql.SELECT("commodityid");
         sql.SELECT("number");
         sql.FROM("order");
         applyWhere(sql, example, false);
@@ -79,11 +89,19 @@ public class OrderSqlProvider {
         }
         
         if (record.getBuyer() != null) {
-            sql.SET("buyer = #{record.buyer,jdbcType=INTEGER}");
+            sql.SET("buyer = #{record.buyer,jdbcType=CHAR}");
+        }
+        
+        if (record.getBuyerid() != null) {
+            sql.SET("buyerid = #{record.buyerid,jdbcType=BIGINT}");
         }
         
         if (record.getCommodity() != null) {
-            sql.SET("commodity = #{record.commodity,jdbcType=INTEGER}");
+            sql.SET("commodity = #{record.commodity,jdbcType=CHAR}");
+        }
+        
+        if (record.getCommodityid() != null) {
+            sql.SET("commodityid = #{record.commodityid,jdbcType=BIGINT}");
         }
         
         if (record.getNumber() != null) {
@@ -99,8 +117,10 @@ public class OrderSqlProvider {
         sql.UPDATE("order");
         
         sql.SET("orderid = #{record.orderid,jdbcType=BIGINT}");
-        sql.SET("buyer = #{record.buyer,jdbcType=INTEGER}");
-        sql.SET("commodity = #{record.commodity,jdbcType=INTEGER}");
+        sql.SET("buyer = #{record.buyer,jdbcType=CHAR}");
+        sql.SET("buyerid = #{record.buyerid,jdbcType=BIGINT}");
+        sql.SET("commodity = #{record.commodity,jdbcType=CHAR}");
+        sql.SET("commodityid = #{record.commodityid,jdbcType=BIGINT}");
         sql.SET("number = #{record.number,jdbcType=INTEGER}");
         
         OrderExample example = (OrderExample) parameter.get("example");
@@ -113,11 +133,19 @@ public class OrderSqlProvider {
         sql.UPDATE("order");
         
         if (record.getBuyer() != null) {
-            sql.SET("buyer = #{buyer,jdbcType=INTEGER}");
+            sql.SET("buyer = #{buyer,jdbcType=CHAR}");
+        }
+        
+        if (record.getBuyerid() != null) {
+            sql.SET("buyerid = #{buyerid,jdbcType=BIGINT}");
         }
         
         if (record.getCommodity() != null) {
-            sql.SET("commodity = #{commodity,jdbcType=INTEGER}");
+            sql.SET("commodity = #{commodity,jdbcType=CHAR}");
+        }
+        
+        if (record.getCommodityid() != null) {
+            sql.SET("commodityid = #{commodityid,jdbcType=BIGINT}");
         }
         
         if (record.getNumber() != null) {

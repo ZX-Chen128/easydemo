@@ -20,8 +20,8 @@ public class UserController {
     private UserService userService;
 
     @ApiOperation("创建用户")
-    @RequestMapping(value = "/creatUser", method = RequestMethod.POST)
-    public CommonResult<Integer> creatUser(User user) {
+    @RequestMapping(value = "/createUser", method = RequestMethod.POST)
+    public CommonResult<Integer> createUser(User user) {
         int creatUser = userService.creatUser(user);
         if(creatUser==0){
             return CommonResult.failed();

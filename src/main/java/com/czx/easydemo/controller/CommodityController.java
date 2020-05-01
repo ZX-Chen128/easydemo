@@ -21,7 +21,7 @@ public class CommodityController {
     private CommodityService commodityService;
 
     @ApiOperation("创建商品")
-    @RequestMapping(value = "/creatCommodity", method = RequestMethod.POST)
+    @RequestMapping(value = "/createCommodity", method = RequestMethod.POST)
     public CommonResult<Integer> createCommodity(Commodity commodity){
         int createCommodity = commodityService.createCommodity(commodity);
         if(createCommodity==0){
