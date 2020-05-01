@@ -1,5 +1,6 @@
 package com.czx.easydemo.controller;
 
+import com.czx.easydemo.aop.LogAop;
 import com.czx.easydemo.common.api.CommonResult;
 import com.czx.easydemo.model.User;
 import com.czx.easydemo.service.UserService;
@@ -16,9 +17,11 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @RequestMapping("/user")
 @Api(tags = "UserController", description = "用户管理")
 public class UserController {
+
     @Autowired
     private UserService userService;
 
+    @LogAop
     @ApiOperation("创建用户")
     @RequestMapping(value = "/createUser", method = RequestMethod.POST)
     public CommonResult<Integer> createUser(User user) {
@@ -52,10 +55,12 @@ public class UserController {
         }
     }
 
+    @LogAop
     @ApiOperation("查找用户")
     @RequestMapping(value = "/findUser", method = RequestMethod.POST)
     public CommonResult<User> findUser(Long id) {
         User user = userService.findUser(id);
         return CommonResult.success(user);
     }
+
 }

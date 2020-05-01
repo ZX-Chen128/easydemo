@@ -16,18 +16,30 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @Api(tags = "RedisController", description = "Redis测试")
 public class RedisController {
 
+    String s = "abc";
+    String key = "I'm key";
+
     @Autowired
     private RedisService redisService;
 
-    @ApiOperation("测试简单缓存")
-    @RequestMapping(value = "/simpleTest", method = RequestMethod.GET)
+    @ApiOperation("测试简单缓存提交")
+    @RequestMapping(value = "/simpleTestSubmit", method = RequestMethod.GET)
     @ResponseBody
-    public CommonResult<String> simpleTest() {
-        String s = "abc";
-        String key = "I'm key";
-        redisService.set(key,s);
+    public CommonResult<String> simpleTestSubmit() {
+        redisService.set(key,s,30);
+        return CommonResult.success("succeed");
+    }
+
+    @ApiOperation("测试简单缓存读取")
+    @RequestMapping(value = "/simpleTestGet", method = RequestMethod.GET)
+    @ResponseBody
+    public CommonResult<String> simpleTestGet() {
         String cache = (String) redisService.get(key);
-        return CommonResult.success(cache);
+        if(cache!=null) {
+            return CommonResult.success(cache);
+        } else {
+            return CommonResult.failed();
+        }
     }
 
 }
