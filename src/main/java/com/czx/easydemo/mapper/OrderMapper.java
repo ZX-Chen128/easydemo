@@ -24,13 +24,13 @@ public interface OrderMapper {
     int deleteByExample(OrderExample example);
 
     @Delete({
-        "delete from `order`",
+        "delete from order",
         "where orderid = #{orderid,jdbcType=BIGINT}"
     })
     int deleteByPrimaryKey(Long orderid);
 
     @Insert({
-        "insert into `order` (orderid, buyer, ",
+        "insert into order (orderid, buyer, ",
         "buyerid, commodity, ",
         "commodityid, number)",
         "values (#{orderid,jdbcType=BIGINT}, #{buyer,jdbcType=CHAR}, ",
@@ -56,7 +56,7 @@ public interface OrderMapper {
     @Select({
         "select",
         "orderid, buyer, buyerid, commodity, commodityid, number",
-        "from `order`",
+        "from order",
         "where orderid = #{orderid,jdbcType=BIGINT}"
     })
     @Results({
@@ -79,7 +79,7 @@ public interface OrderMapper {
     int updateByPrimaryKeySelective(Order record);
 
     @Update({
-        "update `order`",
+        "update order",
         "set buyer = #{buyer,jdbcType=CHAR},",
           "buyerid = #{buyerid,jdbcType=BIGINT},",
           "commodity = #{commodity,jdbcType=CHAR},",

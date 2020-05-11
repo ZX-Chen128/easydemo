@@ -31,3 +31,23 @@ mybatis:
   mapper-locations:
     - classpath:mapper/*.xml
     - classpath*:com/**/mapper/*.xml
+
+
+kafka:
+  #订阅的主题
+  topic: topic-test-01
+  #主题消费分组
+  group: group-test-01
+
+  #kafka地址
+  bootstrap-servers: 127.0.0.1:9092
+  #producer配置
+  producer:
+    key-serializer: org.apache.kafka.common.serialization.StringSerializer
+    value-serializer: org.apache.kafka.common.serialization.StringSerializer
+    acks: all
+    retries: 2
+    batch-size: 16384
+    buffer-memory: 33554432
+    compression-type: gzip
+    client-id test1

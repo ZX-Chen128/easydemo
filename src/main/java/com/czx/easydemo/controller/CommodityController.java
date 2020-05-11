@@ -1,6 +1,7 @@
 package com.czx.easydemo.controller;
 
 
+import com.czx.easydemo.aop.LogAop;
 import com.czx.easydemo.common.api.CommonResult;
 import com.czx.easydemo.model.Commodity;
 import com.czx.easydemo.service.CommodityService;
@@ -53,7 +54,7 @@ public class CommodityController {
         }
     }
 
-
+    @LogAop
     @ApiOperation("查找商品")
     @RequestMapping(value = "/findCommodity", method = RequestMethod.POST)
     public CommonResult<Commodity> findCommodity(Long id){
