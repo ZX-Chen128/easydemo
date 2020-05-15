@@ -6,11 +6,9 @@ import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 
-import java.text.SimpleDateFormat;
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 import java.time.LocalTime;
-import java.util.Date;
+
 
 /**
  * @Description //TODO
@@ -25,7 +23,7 @@ public class KafkaProducer {
     private final KafkaTemplate<String, String> kafkaTemplate;
 
     @Scheduled(cron="10 * * * * ?")
-    public void data(String data){
+    public void data(){
         LocalDate nowDate = LocalDate.now();
         String date = nowDate.toString();
         LocalTime nowTime = LocalTime.now();

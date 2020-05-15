@@ -40,7 +40,7 @@ kafka:
   group: group-test-01
   kafka:
     # 以逗号分隔的地址列表，用于建立与Kafka集群的初始连接(kafka 默认的端口号为9092)
-    bootstrap-servers: 118.89.155.112:9092
+    bootstrap-servers: PLAINTEXT://127.0.0.1:9092
     producer:
       retries: 0
       #当有多个消息需要被发送到同一个分区时，生产者会把它们放在同一个批次里。该参数指定了一个批次可以使用的内存大小，按照字节数计算。
