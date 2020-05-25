@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fb4dedaa-0f49-4c8b-9178-dcc25e7655d5" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/czx/easydemo/controller/RedisController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/czx/easydemo/controller/RedisController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/czx/easydemo/controller/CommodityController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/czx/easydemo/controller/CommodityController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/czx/easydemo/controller/OrderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/czx/easydemo/controller/OrderController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/czx/easydemo/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/czx/easydemo/controller/UserController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -129,7 +129,7 @@
       <workItem from="1588952627144" duration="3190000" />
       <workItem from="1589119098121" duration="13130000" />
       <workItem from="1589696623811" duration="1167000" />
-      <workItem from="1589781486718" duration="7160000" />
+      <workItem from="1589781486718" duration="7581000" />
     </task>
     <task id="LOCAL-00001" summary="easy demo">
       <created>1587611160642</created>
@@ -215,7 +215,14 @@
       <option name="project" value="LOCAL" />
       <updated>1590385335941</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="用户表搭建redis缓存">
+      <created>1590402894122</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1590402894123</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -270,7 +277,8 @@
     <MESSAGE value="消息队列kafka配置" />
     <MESSAGE value="消息队列kafka配置update" />
     <MESSAGE value="redis测试案例升级，kafka缓用" />
-    <option name="LAST_COMMIT_MESSAGE" value="redis测试案例升级，kafka缓用" />
+    <MESSAGE value="用户表搭建redis缓存" />
+    <option name="LAST_COMMIT_MESSAGE" value="用户表搭建redis缓存" />
   </component>
   <component name="WindowStateProjectService">
     <state x="684" y="107" key="#HTTP_Proxy" timestamp="1588344960421">
@@ -289,10 +297,10 @@
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state x="653" y="241" key="#com.intellij.ide.util.MemberChooser/0.0.1680.1050@0.0.1680.1050" timestamp="1588059210180" />
-    <state x="403" y="187" key="CommitChangelistDialog2" timestamp="1590385335624">
+    <state x="403" y="187" key="CommitChangelistDialog2" timestamp="1590402893766">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state x="403" y="187" key="CommitChangelistDialog2/0.0.1680.1050@0.0.1680.1050" timestamp="1590385335624" />
+    <state x="403" y="187" key="CommitChangelistDialog2/0.0.1680.1050@0.0.1680.1050" timestamp="1590402893766" />
     <state x="318" y="190" key="CommitChangelistDialog2/0.23.1680.963@0.23.1680.963" timestamp="1588331738490" />
     <state width="1638" height="312" key="GridCell.Tab.0.bottom" timestamp="1590390334415">
       <screen x="0" y="0" width="1680" height="1050" />
@@ -354,10 +362,10 @@
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state x="245" y="134" key="SettingsEditor/0.0.1680.1050@0.0.1680.1050" timestamp="1589643593210" />
-    <state x="524" y="305" key="Vcs.Push.Dialog.v2" timestamp="1590385338222">
+    <state x="524" y="305" key="Vcs.Push.Dialog.v2" timestamp="1590402896007">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state x="524" y="305" key="Vcs.Push.Dialog.v2/0.0.1680.1050@0.0.1680.1050" timestamp="1590385338222" />
+    <state x="524" y="305" key="Vcs.Push.Dialog.v2/0.0.1680.1050@0.0.1680.1050" timestamp="1590402896007" />
     <state x="517" y="360" key="com.intellij.ide.util.TipDialog" timestamp="1589696646358">
       <screen x="0" y="23" width="1680" height="969" />
     </state>

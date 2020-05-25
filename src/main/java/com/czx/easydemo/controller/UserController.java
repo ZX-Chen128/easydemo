@@ -66,15 +66,12 @@ public class UserController {
     @ApiOperation("查找用户")
     @RequestMapping(value = "/findUser", method = RequestMethod.POST)
     public CommonResult<User> findUser(Long id) {
-        long start = System.currentTimeMillis();
         User user;
         user = (User) redisService.get(id.toString());
         if(user == null) {
             user = userService.findUser(id);
             redisService.set(id.toString(),user);
         }
-        long end = System.currentTimeMillis();
-        System.out.println("总耗时:" + (end - start));
         return CommonResult.success(user);
     }
 

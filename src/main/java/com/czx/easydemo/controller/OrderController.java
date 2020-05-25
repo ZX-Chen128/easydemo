@@ -3,6 +3,7 @@ package com.czx.easydemo.controller;
 import com.czx.easydemo.common.api.CommonResult;
 import com.czx.easydemo.model.Order;
 import com.czx.easydemo.service.OrderService;
+import com.czx.easydemo.service.RedisService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,6 +21,9 @@ public class OrderController {
     @Autowired
     private OrderService orderService;
 
+    @Autowired
+    private RedisService redisService;
+
     @ApiOperation("创建订单")
     @RequestMapping(value = "/createOrder", method = RequestMethod.POST)
     public CommonResult<Integer> createOrder(Order order) {
@@ -27,6 +31,7 @@ public class OrderController {
         if (createOrder == 0) {
             return CommonResult.failed();
         } else {
+            redisService.set(order.getOrderid().toString(),order);
             return CommonResult.success(createOrder);
         }
     }
@@ -34,7 +39,12 @@ public class OrderController {
     @ApiOperation("查找订单")
     @RequestMapping(value = "/findOrder", method = RequestMethod.POST)
     public CommonResult<Order> findOrder(Long id) {
-        Order order = orderService.findOrder(id);
+        Order order;
+        order = (Order) redisService.get(id.toString());
+        if(order == null) {
+            order = orderService.findOrder(id);
+            redisService.set(id.toString(),order);
+        }
         return CommonResult.success(order);
     }
 

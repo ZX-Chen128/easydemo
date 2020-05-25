@@ -5,6 +5,7 @@ import com.czx.easydemo.aop.LogAop;
 import com.czx.easydemo.common.api.CommonResult;
 import com.czx.easydemo.model.Commodity;
 import com.czx.easydemo.service.CommodityService;
+import com.czx.easydemo.service.RedisService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,6 +22,9 @@ public class CommodityController {
     @Autowired
     private CommodityService commodityService;
 
+    @Autowired
+    private RedisService redisService;
+
     @ApiOperation("创建商品")
     @RequestMapping(value = "/createCommodity", method = RequestMethod.POST)
     public CommonResult<Integer> createCommodity(Commodity commodity){
@@ -28,6 +32,7 @@ public class CommodityController {
         if(createCommodity==0){
             return CommonResult.failed();
         } else{
+            redisService.set(commodity.getCommodityid().toString(),commodity);
             return CommonResult.success(createCommodity);
         }
     }
@@ -39,6 +44,7 @@ public class CommodityController {
         if(deleteCommodity==0){
             return CommonResult.failed();
         } else {
+            redisService.del(id.toString());
             return CommonResult.success(deleteCommodity);
         }
     }
@@ -50,6 +56,7 @@ public class CommodityController {
         if(changeCommodity==0){
             return CommonResult.failed();
         } else{
+            redisService.set(commodity.getCommodityid().toString(),commodity);
             return CommonResult.success(changeCommodity);
         }
     }
@@ -58,7 +65,12 @@ public class CommodityController {
     @ApiOperation("查找商品")
     @RequestMapping(value = "/findCommodity", method = RequestMethod.POST)
     public CommonResult<Commodity> findCommodity(Long id){
-        Commodity commodity = commodityService.findCommodity(id);
+        Commodity commodity;
+        commodity = (Commodity) redisService.get(id.toString());
+        if(commodity == null) {
+            commodity = commodityService.findCommodity(id);
+            redisService.set(id.toString(),commodity);
+        }
         return CommonResult.success(commodity);
     }
 
