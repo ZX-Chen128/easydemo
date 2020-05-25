@@ -23,7 +23,7 @@ public class RedisController {
     @RequestMapping(value = "/simpleTestSubmit", method = RequestMethod.GET)
     @ResponseBody
     public CommonResult<String> simpleTestSubmit(String key , String s) {
-        redisService.set(key,s,30);
+        redisService.set(key,s);
         return CommonResult.success("succeed");
     }
 
