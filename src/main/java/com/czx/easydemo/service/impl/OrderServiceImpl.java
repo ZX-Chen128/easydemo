@@ -25,6 +25,7 @@ public class OrderServiceImpl implements OrderService {
     @Override
     public int createOrder(Order order) {
         Commodity commodity = commodityMapper.selectByPrimaryKey(order.getCommodityid());
+        //TODO 防止超卖
         commodity.setStock(commodity.getStock()-order.getNumber());
         commodityMapper.updateByPrimaryKey(commodity);
         User user = userMapper.selectByPrimaryKey(order.getBuyerid());

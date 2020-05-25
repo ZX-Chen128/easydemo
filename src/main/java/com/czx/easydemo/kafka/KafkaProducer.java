@@ -22,7 +22,7 @@ public class KafkaProducer {
 
     private final KafkaTemplate<String, String> kafkaTemplate;
 
-    @Scheduled(cron="10 * * * * ?")
+    @Scheduled(cron="* * 10 * * ?")
     public void data(){
         LocalDate nowDate = LocalDate.now();
         String date = nowDate.toString();
