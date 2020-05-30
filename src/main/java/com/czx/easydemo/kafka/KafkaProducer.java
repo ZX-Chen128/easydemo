@@ -20,6 +20,7 @@ import java.time.LocalTime;
 @Slf4j
 public class KafkaProducer {
 
+    /*
     private final KafkaTemplate<String, String> kafkaTemplate;
 
     @Scheduled(cron="0 0 17 * * ?")
@@ -37,5 +38,7 @@ public class KafkaProducer {
         }
 
     }
+
+     */
 
 }
