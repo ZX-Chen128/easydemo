@@ -3,8 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="fb4dedaa-0f49-4c8b-9178-dcc25e7655d5" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/czx/easydemo/redis/IndexController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/czx/easydemo/redis/IndexController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/czx/easydemo/controller/OrderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/czx/easydemo/controller/OrderController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/czx/easydemo/service/OrderService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/czx/easydemo/service/OrderService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/czx/easydemo/service/impl/OrderServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/czx/easydemo/service/impl/OrderServiceImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -164,7 +165,7 @@
       <workItem from="1589781486718" duration="14313000" />
       <workItem from="1590718781803" duration="775000" />
       <workItem from="1590752246354" duration="168000" />
-      <workItem from="1590806206128" duration="13072000" />
+      <workItem from="1590806206128" duration="15784000" />
     </task>
     <task id="LOCAL-00001" summary="easy demo">
       <created>1587611160642</created>
@@ -292,7 +293,14 @@
       <option name="project" value="LOCAL" />
       <updated>1590820274207</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="redis分布式锁demo，使用了redisson解决了锁失效、锁争抢等问题">
+      <created>1590850529266</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1590850529266</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -389,7 +397,8 @@
     <MESSAGE value="暂时停用kafka" />
     <MESSAGE value="redisson update" />
     <MESSAGE value="解决了使用redis做查询缓存时设置各个表的key为id有重复的问题" />
-    <option name="LAST_COMMIT_MESSAGE" value="解决了使用redis做查询缓存时设置各个表的key为id有重复的问题" />
+    <MESSAGE value="redis分布式锁demo，使用了redisson解决了锁失效、锁争抢等问题" />
+    <option name="LAST_COMMIT_MESSAGE" value="redis分布式锁demo，使用了redisson解决了锁失效、锁争抢等问题" />
   </component>
   <component name="WindowStateProjectService">
     <state x="684" y="107" key="#HTTP_Proxy" timestamp="1588344960421">
@@ -412,10 +421,10 @@
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state x="653" y="241" key="#com.intellij.ide.util.MemberChooser/0.0.1680.1050@0.0.1680.1050" timestamp="1588059210180" />
-    <state x="403" y="187" key="CommitChangelistDialog2" timestamp="1590820273333">
+    <state x="403" y="187" key="CommitChangelistDialog2" timestamp="1590850528809">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state x="403" y="187" key="CommitChangelistDialog2/0.0.1680.1050@0.0.1680.1050" timestamp="1590820273333" />
+    <state x="403" y="187" key="CommitChangelistDialog2/0.0.1680.1050@0.0.1680.1050" timestamp="1590850528809" />
     <state x="318" y="190" key="CommitChangelistDialog2/0.23.1680.963@0.23.1680.963" timestamp="1588331738490" />
     <state width="1189" height="316" key="GridCell.Tab.0.bottom" timestamp="1590820599694">
       <screen x="0" y="0" width="1680" height="1050" />
@@ -481,10 +490,10 @@
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state x="245" y="134" key="SettingsEditor/0.0.1680.1050@0.0.1680.1050" timestamp="1589643593210" />
-    <state x="524" y="305" key="Vcs.Push.Dialog.v2" timestamp="1590820276127">
+    <state x="524" y="305" key="Vcs.Push.Dialog.v2" timestamp="1590850530889">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state x="524" y="305" key="Vcs.Push.Dialog.v2/0.0.1680.1050@0.0.1680.1050" timestamp="1590820276127" />
+    <state x="524" y="305" key="Vcs.Push.Dialog.v2/0.0.1680.1050@0.0.1680.1050" timestamp="1590850530889" />
     <state x="517" y="360" key="com.intellij.ide.util.TipDialog" timestamp="1589696646358">
       <screen x="0" y="23" width="1680" height="969" />
     </state>

@@ -26,7 +26,7 @@ public class OrderController {
 
     @ApiOperation("创建订单")
     @RequestMapping(value = "/createOrder", method = RequestMethod.POST)
-    public CommonResult<Integer> createOrder(Order order) {
+    public CommonResult<Integer> createOrder(Order order) throws InterruptedException {
         int createOrder = orderService.createOrder(order);
         if (createOrder == 0) {
             return CommonResult.failed();

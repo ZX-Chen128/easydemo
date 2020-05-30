@@ -6,7 +6,7 @@ import org.springframework.transaction.annotation.Transactional;
 public interface OrderService {
 
     @Transactional
-    int createOrder(Order order);
+    int createOrder(Order order) throws InterruptedException;
 
     Order findOrder(Long id);
 }
