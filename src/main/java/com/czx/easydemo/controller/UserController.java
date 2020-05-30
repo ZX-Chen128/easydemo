@@ -33,7 +33,8 @@ public class UserController {
         if(creatUser==0){
             return CommonResult.failed();
         } else {
-            redisService.set(user.getUserid().toString(),user);
+            String userid = "userid"+user.getUserid();
+            redisService.set(userid,user);
             return CommonResult.success(creatUser);
         }
     }
@@ -45,7 +46,8 @@ public class UserController {
         if(deleteUser==0){
             return CommonResult.failed();
         } else {
-            redisService.del(id.toString());
+            String userid = "userid"+id;
+            redisService.del(userid);
             return CommonResult.success(deleteUser);
         }
     }
@@ -57,7 +59,8 @@ public class UserController {
         if(changeUser==0){
             return CommonResult.failed();
         } else {
-            redisService.set(user.getUserid().toString(),user);
+            String userid = "userid"+user.getUserid();
+            redisService.set(userid,user);
             return CommonResult.success(changeUser);
         }
     }
@@ -67,10 +70,11 @@ public class UserController {
     @RequestMapping(value = "/findUser", method = RequestMethod.POST)
     public CommonResult<User> findUser(Long id) {
         User user;
-        user = (User) redisService.get(id.toString());
+        String userid = "userid"+id;
+        user = (User) redisService.get(userid);
         if(user == null) {
             user = userService.findUser(id);
-            redisService.set(id.toString(),user);
+            redisService.set(userid,user);
         }
         return CommonResult.success(user);
     }

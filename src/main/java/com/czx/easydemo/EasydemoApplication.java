@@ -10,7 +10,7 @@ import org.springframework.scheduling.annotation.EnableScheduling;
 
 @SpringBootApplication
 @EnableScheduling
-@MapperScan({"com.czx.easydemo"})
+@MapperScan({"com.czx.easydemo.mapper"})
 public class EasydemoApplication {
 
 	public static void main(String[] args) {

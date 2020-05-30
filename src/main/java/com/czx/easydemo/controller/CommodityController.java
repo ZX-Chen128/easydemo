@@ -32,7 +32,8 @@ public class CommodityController {
         if(createCommodity==0){
             return CommonResult.failed();
         } else{
-            redisService.set(commodity.getCommodityid().toString(),commodity);
+            String commodityid = "commodity"+commodity.getCommodityid();
+            redisService.set(commodityid,commodity);
             return CommonResult.success(createCommodity);
         }
     }
@@ -44,7 +45,8 @@ public class CommodityController {
         if(deleteCommodity==0){
             return CommonResult.failed();
         } else {
-            redisService.del(id.toString());
+            String commodityid = "commodity"+id;
+            redisService.del(commodityid);
             return CommonResult.success(deleteCommodity);
         }
     }
@@ -56,7 +58,8 @@ public class CommodityController {
         if(changeCommodity==0){
             return CommonResult.failed();
         } else{
-            redisService.set(commodity.getCommodityid().toString(),commodity);
+            String commodityid = "commodity"+commodity.getCommodityid();
+            redisService.set(commodityid,commodity);
             return CommonResult.success(changeCommodity);
         }
     }
@@ -66,10 +69,11 @@ public class CommodityController {
     @RequestMapping(value = "/findCommodity", method = RequestMethod.POST)
     public CommonResult<Commodity> findCommodity(Long id){
         Commodity commodity;
-        commodity = (Commodity) redisService.get(id.toString());
+        String commodityid = "commodity"+id;
+        commodity = (Commodity) redisService.get(commodityid);
         if(commodity == null) {
             commodity = commodityService.findCommodity(id);
-            redisService.set(id.toString(),commodity);
+            redisService.set(commodityid,commodity);
         }
         return CommonResult.success(commodity);
     }

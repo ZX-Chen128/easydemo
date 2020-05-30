@@ -31,7 +31,8 @@ public class OrderController {
         if (createOrder == 0) {
             return CommonResult.failed();
         } else {
-            redisService.set(order.getOrderid().toString(),order);
+            String orderid = "order"+order.getOrderid();
+            redisService.set(orderid,order);
             return CommonResult.success(createOrder);
         }
     }
@@ -40,10 +41,11 @@ public class OrderController {
     @RequestMapping(value = "/findOrder", method = RequestMethod.POST)
     public CommonResult<Order> findOrder(Long id) {
         Order order;
-        order = (Order) redisService.get(id.toString());
+        String orderid = "order"+id;
+        order = (Order) redisService.get(orderid);
         if(order == null) {
             order = orderService.findOrder(id);
-            redisService.set(id.toString(),order);
+            redisService.set(orderid,order);
         }
         return CommonResult.success(order);
     }
