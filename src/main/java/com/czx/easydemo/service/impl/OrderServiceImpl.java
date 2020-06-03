@@ -13,7 +13,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.stereotype.Service;
 
-import java.util.UUID;
 import java.util.concurrent.TimeUnit;
 
 @Service
@@ -43,6 +42,7 @@ public class OrderServiceImpl implements OrderService {
             //获得线程加锁成功，每隔10s检查是否还持有锁，如果持有则延长锁的时间
             //如果没有获得线程，则while循环，一直尝试加锁（自旋）
             redissonLock.lock(30, TimeUnit.SECONDS);
+
             int orderedstock = order.getNumber();
             int remainedstock = commodityMapper.selectByPrimaryKey(order.getCommodityid()).getStock();
             int singleprice = commodityMapper.selectByPrimaryKey(order.getCommodityid()).getPrice();
