@@ -2,6 +2,7 @@ package com.czx.easydemo.kafka;
 
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.kafka.clients.producer.ProducerConfig;
 import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
@@ -20,7 +21,8 @@ import java.time.LocalTime;
 @Slf4j
 public class KafkaProducer {
 
-    /*
+    //ProducerConfig类中存储了所有的Kafka配置参数
+
     private final KafkaTemplate<String, String> kafkaTemplate;
 
     @Scheduled(cron="0 0 17 * * ?")
@@ -38,7 +40,5 @@ public class KafkaProducer {
         }
 
     }
-
-     */
 
 }
