@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="fb4dedaa-0f49-4c8b-9178-dcc25e7655d5" name="Default Changelist" comment="6.8 一个update">
+    <list default="true" id="fb4dedaa-0f49-4c8b-9178-dcc25e7655d5" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/easydemo.iml" beforeDir="false" afterPath="$PROJECT_DIR$/easydemo.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/czx/easydemo/nettydemo/NettyClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/czx/easydemo/nettydemo/NettyClient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/czx/easydemo/nettydemo/NettyServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/czx/easydemo/nettydemo/NettyServer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/czx/easydemo/kafka/KafkaConsumer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/czx/easydemo/kafka/KafkaConsumer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/czx/easydemo/kafka/KafkaProducer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/czx/easydemo/kafka/KafkaProducer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/czx/easydemo/redis/IndexController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/czx/easydemo/redis/IndexController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -66,7 +67,7 @@
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
     <property name="restartRequiresConfirmation" value="false" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.selected.configurable" value="com.alibabacloud.intellij.config.AccountConfigurable" />
   </component>
   <component name="ReactorSettings">
     <option name="notificationShown" value="true" />
@@ -83,7 +84,7 @@
       <recent name="$PROJECT_DIR$" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.NettyClient">
+  <component name="RunManager" selected="Spring Boot.EasydemoApplication">
     <configuration name="Generator" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.czx.easydemo.mbg.Generator" />
       <module name="easydemo" />
@@ -136,18 +137,47 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="EasydemoApplication1" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
-      <module name="easydemo" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="com.czx.easydemo.EasydemoApplication" />
-      <option name="ALTERNATIVE_JRE_PATH" />
+    <configuration name="ECS on Alibaba Cloud" type="ECS_RUN_CONFIGRATION" factoryName="Ecs configuration factory">
+      <option name="address" />
+      <option name="afterCommand" value="" />
+      <option name="alreadyReset" value="true" />
+      <option name="autoOpen" value="false" />
+      <option name="beforeCommand" />
+      <option name="defaultTabIdx" value="0" />
+      <option name="ecsInstance">
+        <EcsInstance>
+          <option name="OSType" value="linux" />
+          <option name="instanceId" value="i-uf6j3ov2pyooivawzdoi" />
+          <option name="instanceName" value="iZuf6j3ov2pyooivawzdoiZ" />
+          <option name="netType" value="vpc" />
+          <option name="privateIps" value="172.19.100.7" />
+          <option name="publicIps" value="139.196.186.180" />
+          <option name="regionId" value="cn-shanghai" />
+          <option name="tags">
+            <list />
+          </option>
+        </EcsInstance>
+      </option>
+      <option name="hostTagId" value="0" />
+      <option name="location" value="/springboot" />
+      <option name="pathOrUrl" value="$PROJECT_DIR$/target/easydemo-0.0.1-SNAPSHOT.jar" />
+      <option name="tagId" value="0" />
+      <option name="terminalCommand" />
+      <option name="type" value="ECS" />
+      <option name="uploadType" value="MAVEN" />
       <method v="2">
-        <option name="Make" enabled="true" />
+        <option name="Maven.BeforeRunTask" enabled="true" file="$PROJECT_DIR$/pom.xml" goal="clean install" />
       </method>
     </configuration>
-    <configuration name="EasydemoApplication2" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+    <configuration name="EasydemoApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
       <module name="easydemo" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.czx.easydemo.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.czx.easydemo.EasydemoApplication" />
-      <option name="ALTERNATIVE_JRE_PATH" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -155,13 +185,14 @@
     <list>
       <item itemvalue="Application.Generator" />
       <item itemvalue="Application.Main" />
-      <item itemvalue="Spring Boot.EasydemoApplication2" />
-      <item itemvalue="Spring Boot.EasydemoApplication1" />
       <item itemvalue="Application.NettyServer" />
       <item itemvalue="Application.NettyClient" />
+      <item itemvalue="ECS on Alibaba Cloud.ECS on Alibaba Cloud" />
+      <item itemvalue="Spring Boot.EasydemoApplication" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Spring Boot.EasydemoApplication" />
         <item itemvalue="Application.NettyClient" />
         <item itemvalue="Application.NettyServer" />
         <item itemvalue="Application.Main" />
@@ -196,7 +227,9 @@
       <workItem from="1590718781803" duration="775000" />
       <workItem from="1590752246354" duration="168000" />
       <workItem from="1590806206128" duration="16525000" />
-      <workItem from="1590976666703" duration="5919000" />
+      <workItem from="1590976666703" duration="9505000" />
+      <workItem from="1591889570140" duration="849000" />
+      <workItem from="1592378265675" duration="5601000" />
     </task>
     <task id="LOCAL-00001" summary="easy demo">
       <created>1587611160642</created>
@@ -352,7 +385,14 @@
       <option name="project" value="LOCAL" />
       <updated>1591622453358</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="6.8 netty测试">
+      <created>1591623542812</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1591623542812</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -453,9 +493,14 @@
     <MESSAGE value="完成订单表的基于redisson实现的redis分布式锁，解决了购买时的并发竞争问题" />
     <MESSAGE value="6.3 一个简单的command+o" />
     <MESSAGE value="6.8 一个update" />
-    <option name="LAST_COMMIT_MESSAGE" value="6.8 一个update" />
+    <MESSAGE value="6.8 netty测试" />
+    <option name="LAST_COMMIT_MESSAGE" value="6.8 netty测试" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="535" y="214" key="#ECS_on_Alibaba_Cloud" timestamp="1593180728601">
+      <screen x="0" y="0" width="1680" height="1050" />
+    </state>
+    <state x="535" y="214" key="#ECS_on_Alibaba_Cloud/0.0.1680.1050@0.0.1680.1050" timestamp="1593180728601" />
     <state x="684" y="107" key="#HTTP_Proxy" timestamp="1588344960421">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
@@ -468,44 +513,44 @@
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state x="440" y="190" key="#Project_Structure/0.0.1680.1050@0.0.1680.1050" timestamp="1589821565327" />
-    <state x="304" y="187" width="1204" height="676" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1590820553621">
+    <state x="304" y="187" width="1204" height="676" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1593180908517">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state x="304" y="187" width="1204" height="676" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1680.1050@0.0.1680.1050" timestamp="1590820553621" />
+    <state x="304" y="187" width="1204" height="676" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1680.1050@0.0.1680.1050" timestamp="1593180908517" />
     <state x="653" y="241" key="#com.intellij.ide.util.MemberChooser" timestamp="1588059210180">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state x="653" y="241" key="#com.intellij.ide.util.MemberChooser/0.0.1680.1050@0.0.1680.1050" timestamp="1588059210180" />
-    <state x="403" y="187" key="CommitChangelistDialog2" timestamp="1591622560878">
+    <state x="403" y="187" key="CommitChangelistDialog2" timestamp="1591623542333">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state x="403" y="187" key="CommitChangelistDialog2/0.0.1680.1050@0.0.1680.1050" timestamp="1591622560878" />
+    <state x="403" y="187" key="CommitChangelistDialog2/0.0.1680.1050@0.0.1680.1050" timestamp="1591623542333" />
     <state x="318" y="190" key="CommitChangelistDialog2/0.23.1680.963@0.23.1680.963" timestamp="1588331738490" />
-    <state width="1345" height="309" key="GridCell.Tab.0.bottom" timestamp="1591623116436">
+    <state width="1344" height="309" key="GridCell.Tab.0.bottom" timestamp="1593180913293">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state width="1345" height="309" key="GridCell.Tab.0.bottom/0.0.1680.1050@0.0.1680.1050" timestamp="1591623116436" />
+    <state width="1344" height="309" key="GridCell.Tab.0.bottom/0.0.1680.1050@0.0.1680.1050" timestamp="1593180913293" />
     <state width="1638" height="338" key="GridCell.Tab.0.bottom/0.23.1680.961@0.23.1680.961" timestamp="1588087927956" />
     <state width="1638" height="338" key="GridCell.Tab.0.bottom/0.23.1680.966@0.23.1680.966" timestamp="1588082709356" />
     <state width="1638" height="279" key="GridCell.Tab.0.bottom/0.23.1680.972@0.23.1680.972" timestamp="1588077821111" />
-    <state width="1345" height="309" key="GridCell.Tab.0.center" timestamp="1591623116434">
+    <state width="1344" height="309" key="GridCell.Tab.0.center" timestamp="1593180913291">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state width="1345" height="309" key="GridCell.Tab.0.center/0.0.1680.1050@0.0.1680.1050" timestamp="1591623116434" />
+    <state width="1344" height="309" key="GridCell.Tab.0.center/0.0.1680.1050@0.0.1680.1050" timestamp="1593180913291" />
     <state width="1638" height="338" key="GridCell.Tab.0.center/0.23.1680.961@0.23.1680.961" timestamp="1588087927952" />
     <state width="1638" height="338" key="GridCell.Tab.0.center/0.23.1680.966@0.23.1680.966" timestamp="1588082709354" />
     <state width="1638" height="279" key="GridCell.Tab.0.center/0.23.1680.972@0.23.1680.972" timestamp="1588077821104" />
-    <state width="1345" height="309" key="GridCell.Tab.0.left" timestamp="1591623116433">
+    <state width="1344" height="309" key="GridCell.Tab.0.left" timestamp="1593180913290">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state width="1345" height="309" key="GridCell.Tab.0.left/0.0.1680.1050@0.0.1680.1050" timestamp="1591623116433" />
+    <state width="1344" height="309" key="GridCell.Tab.0.left/0.0.1680.1050@0.0.1680.1050" timestamp="1593180913290" />
     <state width="1638" height="338" key="GridCell.Tab.0.left/0.23.1680.961@0.23.1680.961" timestamp="1588087927951" />
     <state width="1638" height="338" key="GridCell.Tab.0.left/0.23.1680.966@0.23.1680.966" timestamp="1588082709352" />
     <state width="1638" height="279" key="GridCell.Tab.0.left/0.23.1680.972@0.23.1680.972" timestamp="1588077821102" />
-    <state width="1345" height="309" key="GridCell.Tab.0.right" timestamp="1591623116435">
+    <state width="1344" height="309" key="GridCell.Tab.0.right" timestamp="1593180913292">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state width="1345" height="309" key="GridCell.Tab.0.right/0.0.1680.1050@0.0.1680.1050" timestamp="1591623116435" />
+    <state width="1344" height="309" key="GridCell.Tab.0.right/0.0.1680.1050@0.0.1680.1050" timestamp="1593180913292" />
     <state width="1638" height="338" key="GridCell.Tab.0.right/0.23.1680.961@0.23.1680.961" timestamp="1588087927955" />
     <state width="1638" height="338" key="GridCell.Tab.0.right/0.23.1680.966@0.23.1680.966" timestamp="1588082709355" />
     <state width="1638" height="279" key="GridCell.Tab.0.right/0.23.1680.972@0.23.1680.972" timestamp="1588077821106" />
@@ -541,14 +586,14 @@
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state x="624" y="254" key="RollbackChangesDialog/0.0.1680.1050@0.0.1680.1050" timestamp="1590815176090" />
-    <state x="245" y="134" key="SettingsEditor" timestamp="1589643593211">
+    <state x="245" y="134" key="SettingsEditor" timestamp="1593180471210">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state x="245" y="134" key="SettingsEditor/0.0.1680.1050@0.0.1680.1050" timestamp="1589643593210" />
-    <state x="524" y="305" key="Vcs.Push.Dialog.v2" timestamp="1591622884621">
+    <state x="245" y="134" key="SettingsEditor/0.0.1680.1050@0.0.1680.1050" timestamp="1593180471210" />
+    <state x="524" y="305" key="Vcs.Push.Dialog.v2" timestamp="1592379320206">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state x="524" y="305" key="Vcs.Push.Dialog.v2/0.0.1680.1050@0.0.1680.1050" timestamp="1591622884621" />
+    <state x="524" y="305" key="Vcs.Push.Dialog.v2/0.0.1680.1050@0.0.1680.1050" timestamp="1592379320206" />
     <state x="517" y="360" key="com.intellij.ide.util.TipDialog" timestamp="1589696646358">
       <screen x="0" y="23" width="1680" height="969" />
     </state>
@@ -560,10 +605,15 @@
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state x="623" y="449" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1680.1050@0.0.1680.1050" timestamp="1590385326382" />
-    <state x="505" y="233" width="670" height="676" key="search.everywhere.popup" timestamp="1590584069319">
+    <state x="217" y="222" key="new project wizard" timestamp="1592654870028">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state x="505" y="233" width="670" height="676" key="search.everywhere.popup/0.0.1680.1050@0.0.1680.1050" timestamp="1590584069319" />
+    <state x="217" y="222" key="new project wizard/0.0.1680.1050@0.0.1680.1050" timestamp="1592654870028" />
+    <state x="505" y="233" width="670" height="676" key="search.everywhere.popup" timestamp="1592650091185">
+      <screen x="0" y="0" width="1680" height="1050" />
+    </state>
+    <state x="505" y="233" width="670" height="676" key="search.everywhere.popup/0.0.1680.1050@0.0.1680.1050" timestamp="1592650091185" />
+    <state x="505" y="233" width="670" height="676" key="search.everywhere.popup/0.23.1680.966@0.23.1680.966" timestamp="1591687354984" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

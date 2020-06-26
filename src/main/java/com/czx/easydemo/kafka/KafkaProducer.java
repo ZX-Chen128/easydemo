@@ -21,6 +21,7 @@ import java.time.LocalTime;
 @Slf4j
 public class KafkaProducer {
 
+    /**
     //ProducerConfig类中存储了所有的Kafka配置参数
 
     private final KafkaTemplate<String, String> kafkaTemplate;
@@ -40,5 +41,6 @@ public class KafkaProducer {
         }
 
     }
+    */
 
 }

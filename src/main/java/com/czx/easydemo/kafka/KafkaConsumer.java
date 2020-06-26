@@ -18,7 +18,7 @@ import org.springframework.stereotype.Component;
 @Component
 @Slf4j
 public class KafkaConsumer {
-
+/**
     @Autowired
     LogMapper logMapper;
 
@@ -39,4 +39,5 @@ public class KafkaConsumer {
 
     }
 
+    */
 }

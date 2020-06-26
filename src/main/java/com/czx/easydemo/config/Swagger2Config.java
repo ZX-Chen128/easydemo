@@ -13,7 +13,7 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 /**
  * Swagger2API文档的配置
  *
- * http://localhost:8123/doc.html
+ * http://localhost:8080/doc.html
  *
  */
 @Configuration

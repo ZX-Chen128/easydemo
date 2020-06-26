@@ -15,6 +15,7 @@ public class IndexController {
 
     @Autowired
     private Redisson redisson;
+
     @Autowired
     private StringRedisTemplate stringRedisTemplate;
 
